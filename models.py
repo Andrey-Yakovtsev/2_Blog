@@ -20,9 +20,9 @@ class Post(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String(50), nullable=False)
     text = Column(Text, nullable=False)
-    is_published = Column(Boolean, nullable=False, default=False, server_default='0')
+    is_published = Column(Boolean, nullable=False, default=True, server_default='1')
     tags = relationship('Tag', secondary=posts_tags_m2m_table, back_populates='posts')
-    category_id = Column(Integer, ForeignKey('Category.id'), nullable=False)
+    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
 
 
 class Category(Base):
