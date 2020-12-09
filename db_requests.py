@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Text, Boolean, ForeignKey
+from sqlalchemy import create_engine, MetaData
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, Session
+from sqlalchemy.orm import Session
 
 from models import Post, Category, Tag
 
@@ -11,24 +11,38 @@ metadata = MetaData(bind=engine)
 
 def create_items_in_db():
     session = Session()
-    post = Post(title="Первый пост", text='This is a post text', category_id=1, is_published=True)
-    tag1 = Tag(tag_title='Здоровье')
-    tag2 = Tag(tag_title='Спорт')
-    tag3 = Tag(tag_title='Красота')
-    # category1 = Category(title="Зожные статьи")
-    # category2 = Category(title="Качковые статьи")
+    post = Post(title="Первый пост", text='This is a post text', is_published=True)
+    tag1 = Tag(title='Здоровье')
+    tag2 = Tag(title='Спорт')
+    tag3 = Tag(title='Красота')
+    category1 = Category(title="Зожные статьи")
+    category2 = Category(title="Качковые статьи")
     session.add(post)
-    # session.add(category1)
-    # session.add(category2)
+    session.add(category1)
+    session.add(category2)
     session.add(tag1)
     session.add(tag2)
     session.add(tag3)
     session.flush()
     post.tags.extend((tag1, tag2))
-    # post.category_id = category1.id
+    post.category = category1.id
 
     session.commit()
+    session.close()
+
+def show_post_tags():
+    session = Session()
+    for post in session.query(Post):
+        return post.tags
+
+def show_posts_by_tags(tag):
+    pass
+
+def show_posts_by_category(category):
+    pass
+
 
 
 if __name__ == '__main__':
-    create_items_in_db()
+    # create_items_in_db()
+    print(show_post_tags())
