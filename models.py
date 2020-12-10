@@ -22,6 +22,12 @@ class Category(Base):
     title = Column(String(50), nullable=False)
     posts = relationship('Post')
 
+    def __str__(self):
+        return str(self.title)
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Post(Base):
     __tablename__ = 'posts'
@@ -33,6 +39,12 @@ class Post(Base):
     tags = relationship('Tag', secondary=posts_tags_m2m_table, back_populates='posts')
     category = Column(Integer, ForeignKey('categories.id'))
 
+    def __str__(self):
+        return str(self.title)
+
+    # def __repr__(self):
+    #     return self.__str__()
+
 
 class Tag(Base):
     __tablename__ = 'tags'
@@ -40,6 +52,12 @@ class Tag(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String(50), nullable=False, unique=True)
     posts = relationship(Post, secondary=posts_tags_m2m_table, back_populates='tags')
+
+    def __str__(self):
+        return str(self.title)
+
+    def __repr__(self):
+        return self.__str__()
 
 
 if __name__ == '__main__':
