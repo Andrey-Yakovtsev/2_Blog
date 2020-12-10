@@ -42,8 +42,6 @@ class Post(Base):
     def __str__(self):
         return str(self.title)
 
-    # def __repr__(self):
-    #     return self.__str__()
 
 
 class Tag(Base):

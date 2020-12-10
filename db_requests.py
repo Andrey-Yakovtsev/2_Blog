@@ -32,23 +32,21 @@ def create_items_in_db():
 
 def show_post_tags():
     for post in session.query(Post):
-        return (f'У поста {post}, тэги: {post.tags}, Категория: {post.category}')
+        return (f'У поста {post.title}, тэги: {post.tags}, Категория: {post.category}')
 
 
-def show_posts_by_tags(tag):
+def show_posts_by_tags(tag_name):
     for post in session.query(Post).filter_by(title='Первый пост'):
-        if tag == [str(i) for i in post.tags]:
-            return post.title
-        else:
-            return 'No such tag'
-
-
-
+        for tag in post.tags:
+            if tag_name == str(tag.title):
+                return post.title
+            else:
+                return 'No such tag'
 
 
 if __name__ == '__main__':
     # create_items_in_db()
     session = Session()
-    # print(show_post_tags())
+    print(show_post_tags())
     print(show_posts_by_tags('Здоровье'))
     session.close()
