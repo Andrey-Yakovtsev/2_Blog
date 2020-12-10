@@ -1,92 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Здоровый образ жизни</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="/static/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="/static/css/style.min.css" rel="stylesheet">
-</head>
+{% block title %}
+ЗОЖеБлог
+{% endblock title %}
 
-<body>
-
-  <!--Main Navigation-->
-  <header>
-
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container">
-
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="/templates/index.html" target="_blank">
-          <strong class="blue-text">ЗОЖеБЛОГ</strong>
-        </a>
-
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect" href="/templates/index.html">Главная
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/templates/category-page.html" target="_blank">Категория</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/templates/post-page.html"
-                target="_blank"></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/templates/post-page.html" target="_blank">Горячий пост</a>
-            </li>
-          </ul>
-
-          <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>ЗОЖин
-              </a>
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-    </nav>
-    <!-- Navbar -->
-
-  </header>
-  <!--Main Navigation-->
-
+{% block content %}
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container">
@@ -270,50 +188,7 @@
     </div>
   </main>
   <!--Main layout-->
-
-  <!--Footer-->
-  <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
-
-    <!--Call to action-->
-    <div class="pt-4">
-      <a class="btn btn-outline-white" href="#" target="_blank"
-        role="button">Купить курс и смотреть на диване
-        <i class="fas fa-download ml-2"></i>
-      </a>
-      <a class="btn btn-outline-white" href="#" target="_blank" role="button">Хочу жечь жир!
-        <i class="fas fa-graduation-cap ml-2"></i>
-      </a>
-    </div>
-    <!--/.Call to action-->
-
-    <hr class="my-4">
-
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2021 Copyright:
-      <a href="#" target="_blank"> Zozhzhzhzh.com </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="/static/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="/static/js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-
-  </script>
+{% endblock content%}
 </body>
 
 </html>
