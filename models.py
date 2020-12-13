@@ -17,7 +17,7 @@ posts_tags_m2m_table = db.Table(
 class Category(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=False)
-    title = db.Column(db.String(50), nullable=False)
+    title = db.Column(db.String(50), nullable=True)
     posts = db.relationship('Post', backref='categories', lazy=True)
 
     def __str__(self):
@@ -30,7 +30,8 @@ class Category(db.Model):
 class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=False)
-    title = db.Column(db.String(50), nullable=False)
+    picture = db.Column(db.String(250), nullable=True)
+    title = db.Column(db.String(75), nullable=False)
     text = db.Column(db.Text, nullable=False)
     is_published = db.Column(db.Boolean, nullable=False, default=True, server_default='1')
     tags = db.relationship('Tag', secondary=posts_tags_m2m_table, lazy='subquery',

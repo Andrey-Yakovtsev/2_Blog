@@ -1,0 +1,6 @@
+.idea
+venv
+**/__pycache__/
+*.db
+State_1/*
+State_1
