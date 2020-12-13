@@ -114,13 +114,12 @@
               <!--Card content-->
               <div class="card-body text-center">
 
-                <p class="h5 my-4">What is MDB?</p>
+                <p class="h5 my-4">{{ post.title }}</p>
 
-                <p>MDB is world's most popular Material Design framework for building responsive, mobile-first
-                  websites and apps.</p>
+                <p>{{ post.text }}</p>
 
                 <h5 class="my-4">
-                  <strong>MDB - trusted by 400 000 + developers &amp; designers</strong>
+                  <strong>{{ post.text }} </strong>
                 </h5>
 
                 <!-- Logo carousel -->
@@ -259,13 +258,13 @@
               <!--Card content-->
               <div class="card-body">
 
-                <p class="h5 my-4">That's a very long heading </p>
+                <p class="h5 my-4">{{ post.title }}</p>
 
 
                 <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                  <footer class="blockquote-footer">Someone famous in
-                    <cite title="Source Title">Source Title</cite>
+                  <p class="mb-0">{{ post.text }}</p>
+                  <footer class="blockquote-footer">{{ post.tags }}
+                    <cite title="Source Title">Тэги поста </cite>
                   </footer>
                 </blockquote>
 
