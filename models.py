@@ -49,8 +49,6 @@ class Tag(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     title = db.Column(db.String(50), nullable=False, unique=True)
-    # posts = db.relationship('Post', secondary=posts_tags_m2m_table, lazy='subquery',
-    #                        backref=db.backref('posts', lazy=True))
 
     def __str__(self):
         return str(self.title)
