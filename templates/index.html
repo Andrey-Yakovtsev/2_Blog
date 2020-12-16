@@ -48,10 +48,12 @@
                             <div class="card">
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <div class="embed-responsive embed-responsive-16by9 rounded-top">
-                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ggVjbqKxIF8" allowfullscreen></iframe>
-                                    </div>
-                                </div>
+                                <img src="{{ post.picture }}" class="card-img-top"
+                                     alt="">
+                                <a href="{{ url_for('posts_app.post_detail', post_id=post.id) }}" target="_blank">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
 
                                 <!--Card content-->
                                 <div class="card-body">
