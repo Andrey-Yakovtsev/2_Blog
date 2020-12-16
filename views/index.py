@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+
 from models import Post, Tag, Category
 
 index_app = Blueprint('index_app', __name__)

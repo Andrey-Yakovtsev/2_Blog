@@ -6,6 +6,9 @@ posts_app = Blueprint('posts_app', __name__)
 @posts_app.route('/<post_id>', endpoint='post_detail')
 def posts_item(post_id):
     post = Post.query.filter_by(id=post_id).first_or_404()
+    last = len(Post.query.all())
+    print(last)
     return render_template('post-page.html',
-                           post=post)
+                           post=post,
+                           last=last)
 

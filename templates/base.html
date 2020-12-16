@@ -60,20 +60,20 @@
                         </a>
                         <!-- Dropdown menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Бег</a></li>
-                            <li><a class="dropdown-item" href="#">Велоспорт</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('category_app.category_page', category_id=1) }}">Бег</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('category_app.category_page', category_id=2) }}">Велоспорт</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             <li>
-                                <a class="dropdown-item" href="#">Просто фитнес</a>
+                                <a class="dropdown-item" href="{{ url_for('category_app.category_page', category_id=3) }}">Просто фитнес</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="/templates/post-page.html"
+                        <a class="nav-link waves-effect" href="{{ url_for('posts_app.post_detail', post_id=6) }}"
                            target="_blank"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="/templates/post-page.html" target="_blank">Свежайший  пост</a>
+                        <a class="nav-link waves-effect" href="{{ url_for('posts_app.post_detail', post_id=6) }}" target="_blank">Свежайший  пост</a>
                     </li>
                 </ul>
 
