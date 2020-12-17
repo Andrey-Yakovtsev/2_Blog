@@ -26,7 +26,7 @@
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand waves-effect" href="/" target="_blank">
+            <a class="navbar-brand waves-effect" href="/">
                 <strong class="blue-text">ЗОЖеБЛОГ</strong>
             </a>
 
@@ -70,32 +70,37 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link waves-effect" href="{{ url_for('posts_app.post_detail', post_id=6) }}"
-                           target="_blank"></a>
+                           ></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="{{ url_for('posts_app.post_detail', post_id=6) }}" target="_blank">Свежайший  пост</a>
+                        <a class="nav-link waves-effect" href="{{ url_for('posts_app.post_detail', post_id=6) }}" >Свежайший  пост</a>
                     </li>
                 </ul>
 
 
                 <!-- Right -->
                 <ul class="navbar-nav nav-flex-icons">
+                    {% if user %}
+                        <li class="nav-item">
+                        Привет, {{ user.login }}  !
+                    </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link waves-effect" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="{{ url_for('logout') }}" class="nav-link border border-light rounded waves-effect">
+                            <i class="fab fa-github mr-2"></i>ЗОЖout
+                        </a>
+                    </li>
+                    {% else %}
+                        <li class="nav-item">
+                        <a href="{{ url_for('login') }}" class="nav-link border border-light rounded waves-effect">
+                            <i class="fab fa-github mr-2"></i>ЗОЖin
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link waves-effect" target="_blank">
-                            <i class="fab fa-twitter"></i>
+                        <a href="{{ url_for('register') }}" class="nav-link border border-light rounded waves-effect">
+                            <i class="fab fa-github mr-2"></i>Зарегаться
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link border border-light rounded waves-effect"
-                           target="_blank">
-                            <i class="fab fa-github mr-2"></i>ЗОЖин
-                        </a>
-                    </li>
+                    {% endif %}
                 </ul>
 
             </div>
@@ -130,7 +135,7 @@
     <!--Copyright-->
     <div class="footer-copyright py-3">
         © 2021 Copyright:
-        <a href="#" target="_blank"> Zozhzhzhzh.com </a>
+        <a href="/" > Zozhzhzhzh.com </a>
     </div>
     <!--/.Copyright-->
 

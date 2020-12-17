@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -57,6 +58,7 @@ class Tag(db.Model):
         return self.__str__()
 
 
-if __name__ == '__main__':
-    # DB create
-    db.create_all()
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    login = db.Column(db.String(128), nullable=False, unique=True)
+    password = db.Column(db.String(128), nullable=False)
