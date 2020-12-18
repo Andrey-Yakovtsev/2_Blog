@@ -1,2 +1,5 @@
 /venv/*
 *.db
+db_requests.py
+blog.db
+blog_new.db
