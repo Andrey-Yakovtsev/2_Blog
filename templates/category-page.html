@@ -18,21 +18,18 @@
         <!-- Heading & Description -->
         <div class="wow fadeIn">
           <!--Section heading-->
-          <h2 class="h1 text-center mb-5">{{ category }}</h2>
+          <h2 class="h1 text-center mb-5">{{ category.title }}</h2>
           <!--Section description-->
-          <p class="text-center">MDB is world's most popular Material Design framework for building responsive,
-            mobile-first websites
-            and apps. </p>
-          <p class="text-center mb-5 pb-5">Trusted by over
-            <strong>400 000</strong> developers and designers. Easy to use & customize. 400+ material UI elements,
-            templates
-            & tutorials.</p>
+{#          <p class="text-center">MDB is world's most popular Material Design framework for building responsive,#}
+{#            mobile-first websites#}
+{#            and apps. </p>#}
+{#          <p class="text-center mb-5 pb-5">Trusted by over#}
+{#            <strong>400 000</strong> developers and designers. Easy to use & customize. 400+ material UI elements,#}
+{#            templates#}
+{#            & tutorials.</p>#}
         </div>
         <!-- Heading & Description -->
-      <p>Where my Fcing text?</p>
          {% for post in category.posts  %}
-             <p>Where my Fcing text?</p>
-        <hr class="mb-5">
         <!--Grid row-->
         <div class="row mt-3 wow fadeIn">
 
@@ -40,9 +37,9 @@
           <div class="col-lg-5 col-xl-4 mb-4">
             <!--Featured image-->
             <div class="view overlay rounded z-depth-1">
-              <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid"
+              <img src="{{ post.picture }}" class="img-fluid"
                 alt="">
-              <a href="https://mdbootstrap.com/education/tech-marketing/automated-app-introduction/" target="_blank">
+              <a href="{{ url_for('posts_app.post_detail', post_id=post.id) }}" target="_blank">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
@@ -52,12 +49,11 @@
           <!--Grid column-->
           <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
             <h3 class="mb-3 font-weight-bold dark-grey-text">
-              <strong>{{ post.id }}</strong>
+              <strong>{{ post.title }}</strong>
             </h3>
-            <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his
-              behavior.</p>
-            <a href="https://mdbootstrap.com/education/tech-marketing/automated-app-introduction/" target="_blank"
-              class="btn btn-primary btn-md">Start tutorial
+            <p class="grey-text">{{ post.text }}.</p>
+            <a href="{{ url_for('posts_app.post_detail', post_id=post.id) }}" target="_blank"
+              class="btn btn-primary btn-md">Читать подробнее
               <i class="fas fa-play ml-2"></i>
             </a>
           </div>
