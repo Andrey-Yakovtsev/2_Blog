@@ -4,3 +4,5 @@ venv
 *.db
 State_1/*
 State_1
+/db_export/*
+/db_export

@@ -1,6 +1,2 @@
-/State_1
-/State_1/*
-req.txt
-/venv
-/db_export/*
-/db_export
+/venv/*
+*.db
